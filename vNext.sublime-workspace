@@ -1,0 +1,364 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"reu",
+				"request"
+			],
+			[
+				"ur",
+				"urllib"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "vNext.py",
+			"settings":
+			{
+				"buffer_size": 1281,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "vNext",
+	"command_palette":
+	{
+		"height": 242.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"build",
+				"Build: Build"
+			],
+			[
+				"ssht",
+				"Set Syntax: HTML"
+			],
+			[
+				"code",
+				"SublimeCodeIntel: Reset"
+			],
+			[
+				"chec",
+				"Check Urls"
+			],
+			[
+				"ch",
+				"Check Urls"
+			],
+			[
+				"chech",
+				"BracketHighlighter: Select Bracket Content with Brackets"
+			],
+			[
+				"check",
+				"Check Urls"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"josn",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"ssjson",
+				"Set Syntax: JSON"
+			],
+			[
+				"prett",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"insta	",
+				"Package Control: Install Package"
+			],
+			[
+				"bui",
+				"Build: Build"
+			],
+			[
+				"buil",
+				"Build: Build"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"set syntax js",
+				"Set Syntax: JSON"
+			],
+			[
+				"set syntax: ht",
+				"Set Syntax: HTML"
+			]
+		],
+		"width": 472.0
+	},
+	"console":
+	{
+		"height": 274.0,
+		"history":
+		[
+			"window.new_file()",
+			"view.run_command('test')",
+			"view.command('test')",
+			"print(\"hi\")",
+			"print \"hi\"",
+			"window.run_command('show_panel', {\"panel\": \"foobar\"})",
+			"self.window.run_command('show_panel', {\"panel\": \"foobar\"})",
+			"help 'print'",
+			"help print",
+			"window.show_panel('foobar',0)",
+			"foobar.show_panel('foobar',0)",
+			"foobar.show('foobar',0)",
+			"foobar.show(2,0)",
+			"foobar.show(2,0,true)",
+			"window.id()",
+			"foobar.show('foobar','true')",
+			"foobar.show('foobar',true)",
+			"foobar.show(0,0)",
+			"foobar.show()",
+			"foobar = window.create_output_panel('foo')",
+			"show_panel('foo')",
+			"window.create_output_panel('foo')",
+			"window.project_data()",
+			"window.project_file_name()"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/t-soshir/AppData/Roaming/Sublime Text 3/Packages/vNext/vNext.py",
+		"/C/Program Files/Sublime Text 3/sublime.py",
+		"/C/src/Github/Home/samples/HelloMvc/Views/Home/Index.cshtml",
+		"/C/src/Github/Home/samples/HelloMvc/HelloMvc.sublime-project",
+		"/C/Users/t-soshir/AppData/Roaming/Sublime Text 2/Packages/C++/C++.sublime-build",
+		"/C/src/Github/Home/samples/HelloMvc/project.json",
+		"/C/src/Github/Home/samples/HelloMvc/HelloMvc.sublime-workspace",
+		"/C/Users/t-soshir/AppData/Roaming/Sublime Text 2/Packages/User/vnext.sublime-build",
+		"/C/Users/t-soshir/AppData/Roaming/Sublime Text 2/Packages/Python/Python.sublime-build",
+		"/C/src/Github/Home/samples/HelloMvc/Startup.cs",
+		"/C/src/Github/Home/samples/HelloWeb/Startup.cs",
+		"/C/Users/t-soshir/Downloads/aspnet.json",
+		"/C/Users/t-soshir/AppData/Roaming/Sublime Text 2/Packages/vNext/vNext.py",
+		"/C/Users/t-soshir/AppData/Roaming/Sublime Text 2/Packages/Prefixr/Prefixr.py",
+		"/C/src/Github/Home/samples/HelloWeb/project.json",
+		"/C/Users/t-soshir/Dropbox/dev12-angular/static/index.html",
+		"/C/Users/t-soshir/Dropbox/dev12-angular/static/js/app.js",
+		"/C/Users/t-soshir/Dropbox/dev12-angular/static/js/angular.min.js",
+		"/C/Users/t-soshir/Dropbox/dev12-angular/static/css/bootstrap.min.css"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"test",
+			"tes",
+			"wd",
+			"view",
+			"te",
+			"\\\\",
+			"urls",
+			"selections = ",
+			"!\")",
+			"test",
+			"is",
+			"this",
+			"text",
+			"def"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"/"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "vNext.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1281,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 215.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.foo":
+	{
+		"height": 0.0
+	},
+	"project": "vNext.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"p",
+				"project.json"
+			],
+			[
+				"pr",
+				"project.json"
+			],
+			[
+				"sta",
+				"Startup.cs"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\src\\Github\\Home\\samples\\HelloMvc\\HelloMvc.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 238.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
