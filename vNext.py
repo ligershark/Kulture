@@ -62,7 +62,8 @@ class ValidateSchemaApiCall(threading.Thread):
                 content = json.loads(self.view.substr(sublime.Region(0, self.view.size())))
             except ValueError as e:
                 self.result = False
-                self.message = "Not valid JSON"
+                self.message = "Not a valid JSON file"
+                return
             try:
                 validate(content, schema)
             except jsonschema.exceptions.ValidationError as e:

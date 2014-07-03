@@ -5,6 +5,5 @@
 			"follow_symlinks": true,
 			"path": "."
 		}
-	],
-	"foo":"bar"
+	]
 }
