@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"valia",
+				"validate_schema"
+			],
+			[
 				"reu",
 				"request"
 			],
@@ -19,20 +23,57 @@
 			"file": "vNext.py",
 			"settings":
 			{
-				"buffer_size": 1281,
+				"buffer_size": 2825,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "vNext.sublime-commands",
+			"settings":
+			{
+				"buffer_size": 71,
+				"line_ending": "Windows",
+				"name": "["
+			}
+		},
+		{
+			"file": "vNext.sublime-project",
+			"settings":
+			{
+				"buffer_size": 87,
+				"line_ending": "Unix"
 			}
 		}
 	],
 	"build_system": "vNext",
 	"command_palette":
 	{
-		"height": 242.0,
+		"height": 58.0,
 		"selected_items":
 		[
 			[
+				"git",
+				"GitGutter: Compare Against Commit"
+			],
+			[
 				"insta",
 				"Package Control: Install Package"
+			],
+			[
+				"va",
+				"Validate JSON Schema"
+			],
+			[
+				"val",
+				"Validate JSON Schema"
+			],
+			[
+				"vali",
+				"Validate JSON Schema"
+			],
+			[
+				"valid",
+				"Validate JSON Schema"
 			],
 			[
 				"instal",
@@ -111,13 +152,101 @@
 				"Set Syntax: HTML"
 			]
 		],
-		"width": 472.0
+		"width": 400.0
 	},
 	"console":
 	{
-		"height": 274.0,
+		"height": 210.0,
 		"history":
 		[
+			"view.run_command('validate_schema')",
+			"window.run_command(\"show_panel\", {\"panel\": \"output.textarea\"})",
+			"output_view = window.get_output_panel(\"textarea\")",
+			"view.run_command('validate_schema')",
+			"window.run_command(\"show_panel\", \"{\"panel\":\"output.test\"})",
+			"output.test",
+			"window.show_panel",
+			"show_panel",
+			"window.create_output_panel('test')",
+			"view.run_command('validate_schema')",
+			"self",
+			"view",
+			"view.run_command('validate_schema')",
+			"content",
+			"content = view.substr(sublime.Region(0, view.size()))",
+			"content = view.substr(sublime.Region(0, self.view.size()))",
+			"content = self.view.substr(sublime.Region(0, self.view.size()))",
+			"view.run_command('validate_schema')",
+			"view.run_command('test')",
+			"validate({\"name\" : \"Eggs\", \"price\" : \"invalid\"}, schema)",
+			"validate({\"name\" : \"Eggs\", \"price\" : 34.99}, schema)",
+			"from jsonschema import validate",
+			"validate({\"name\" : \"Eggs\", \"price\" : 34.99}, schema)",
+			"schema",
+			"schema = {     \"type\" : \"object\",     \"properties\" : {         \"price\" : {\"type\" : \"number\"},         \"name\" : {\"type\" : \"string\"},     }, }",
+			"import jsonschema",
+			"sys.path",
+			"cmd_folder",
+			"cmd_folder = os.path.realpath(os.path.abspath(os.path.split(inspect.getfile( inspect.currentframe() ))[0]))",
+			"import sys",
+			"import os",
+			"cmd_folder = os.path.realpath(os.path.abspath(os.path.split(inspect.getfile( inspect.currentframe() ))[0]))",
+			"import inspect",
+			"sys.path",
+			"import jsonschema",
+			"sys.path",
+			"cmd_folder",
+			"cmd_folder = os.path.realpath(os.path.abspath(os.path.split(inspect.getfile( inspect.currentframe() ))[0]))",
+			"import inspect",
+			"cmd_folder = os.path.realpath(os.path.abspath(os.path.split(inspect.getfile( inspect.currentframe() ))[0]))",
+			"os.path.realpath",
+			"os.path",
+			"import jsonschema",
+			"sys.path",
+			"os.path.dirname",
+			"os.path.dirname(__file__)",
+			"os.path",
+			"sys.path",
+			"import sys",
+			"import os",
+			"import vNext.jsonschema",
+			"from jsonschema import validate",
+			"view.run_command('validate_schema')",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"version()",
+			"sublime_plugin",
+			"sublime",
+			"view.settings().get('syntax')",
+			"view",
+			"view()",
+			"window.active_view().settings()",
+			"window.active_view()",
+			"window.folders()",
+			"view.settings().get('Syntax')",
+			"view.settings().getSyntax()",
+			"view.settings()",
+			"view",
+			"view()",
+			"print(view.settings().get('foo'))",
+			"print(view.settings().get('folders'))",
+			"view.settings().get('folders')",
+			"view.settings().get('bar')",
+			"view.settings().get('bar\")",
+			"view.settings().get()",
+			"view.settings().get('foo')",
+			"view.settings()",
+			"Settings.get()",
+			"import sublime",
+			"settings.get(\"foo\")",
+			"view.run_command('test')",
+			"window.show_quick_panel(['a','b','c'])",
+			"view.run_command('validate_schema')",
+			"view.command('validate_schema')",
+			"view.window().new_file()",
+			"view.window()",
+			"sublime.new_file()",
+			"window.new_file()",
+			"window.new_fiile()",
 			"window.new_file()",
 			"view.run_command('test')",
 			"view.command('test')",
@@ -155,6 +284,8 @@
 	},
 	"file_history":
 	[
+		"/C/Users/t-soshir/AppData/Roaming/Sublime Text 3/Packages/vNext/jsonschema/__init__.py",
+		"/C/Users/t-soshir/AppData/Roaming/Sublime Text 3/Packages/vNext/vNext.sublime-project",
 		"/C/Users/t-soshir/AppData/Roaming/Sublime Text 3/Packages/vNext/vNext.py",
 		"/C/Program Files/Sublime Text 3/sublime.py",
 		"/C/src/Github/Home/samples/HelloMvc/Views/Home/Index.cshtml",
@@ -177,7 +308,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -192,6 +323,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"arg",
+			"True",
+			"w",
 			"test",
 			"tes",
 			"wd",
@@ -233,15 +367,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1281,
+						"buffer_size": 2825,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1044,
+								1044
 							]
 						],
 						"settings":
@@ -250,11 +384,68 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
-						"translation.y": 0.0,
+						"translation.x": 0.0,
+						"translation.y": 315.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "vNext.sublime-commands",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 71,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								67,
+								67
+							]
+						],
+						"settings":
+						{
+							"auto_name": "[",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "vNext.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 87,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								87,
+								87
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -303,10 +494,18 @@
 	{
 		"height": 0.0
 	},
+	"output.test":
+	{
+		"height": 0.0
+	},
+	"output.textarea":
+	{
+		"height": 100.0
+	},
 	"project": "vNext.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -314,6 +513,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"su",
+				"vNext.sublime-project"
+			],
 			[
 				"p",
 				"project.json"
@@ -356,7 +559,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 238.0,
+	"side_bar_width": 188.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
