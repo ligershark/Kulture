@@ -1,3 +1,5 @@
 [
-	{ "caption": "Validate JSON Schema", "command": "validate_schema"}
+	{ "caption": "Validate JSON Schema", "command": "validate_schema"},
+	{ "caption": "Run K Commands", "command": "k"},
+	{ "caption": "test", "command": "test"}
 ]

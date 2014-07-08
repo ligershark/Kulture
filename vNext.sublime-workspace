@@ -31,7 +31,7 @@
 			"file": "vNext.py",
 			"settings":
 			{
-				"buffer_size": 3088,
+				"buffer_size": 5445,
 				"line_ending": "Windows"
 			}
 		},
@@ -48,7 +48,7 @@
 			"file": "vNext.sublime-commands",
 			"settings":
 			{
-				"buffer_size": 71,
+				"buffer_size": 162,
 				"line_ending": "Windows",
 				"name": "["
 			}
@@ -57,7 +57,7 @@
 			"file": "vNext.sublime-project",
 			"settings":
 			{
-				"buffer_size": 87,
+				"buffer_size": 73,
 				"line_ending": "Unix"
 			}
 		}
@@ -277,15 +277,15 @@
 					"file": "vNext.py",
 					"settings":
 					{
-						"buffer_size": 3088,
+						"buffer_size": 5445,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2506,
-								2506
+								0,
+								0
 							]
 						],
 						"settings":
@@ -531,15 +531,15 @@
 					"file": "vNext.sublime-commands",
 					"settings":
 					{
-						"buffer_size": 71,
+						"buffer_size": 162,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4,
-								4
+								0,
+								0
 							]
 						],
 						"settings":
@@ -558,15 +558,15 @@
 					"file": "vNext.sublime-project",
 					"settings":
 					{
-						"buffer_size": 87,
+						"buffer_size": 73,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								87,
-								87
+								0,
+								0
 							]
 						],
 						"settings":

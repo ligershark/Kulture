@@ -1,6 +1,26 @@
-import sublime, sublime_plugin, urllib.request, threading, json, jsonschema
+import sublime, sublime_plugin, urllib.request, threading, json, jsonschema, os
 # Add jsonschema folder to C:\Program Files\Sublime Text 3 as a temporary workaround
+from sys import version_info
 from jsonschema import validate
+from os import name as os_name
+from subprocess import Popen
+
+# Warn the user if they are running an unsupported version
+if (version_info < (3,) or os_name!='nt'):
+    sublime.error_message('This plugin is for Sublime Text 3. ST2 is not supported at the moment')
+
+class KCommand(sublime_plugin.WindowCommand):
+
+    def run(self):
+        file_name = os.getcwd() + '\\project.json'
+        print(file_name)
+        json_commands = json.load(open(file_name))['commands']
+        self.commands = []
+        for command in json_commands:
+            self.commands.append('k ' + command)
+        self.window.show_quick_panel(self.commands, self.commandlist)
+    def commandlist(on_done):
+        print(on_done)
 
 class ValidateSchemaCommand(sublime_plugin.TextCommand):
     def run(self, edit):
@@ -11,6 +31,12 @@ class ValidateSchemaCommand(sublime_plugin.TextCommand):
         # self.output_view = self.window.get_output_panel("textarea")
         # self.window.run_command("show_panel", {"panel": "output.textarea"})
         self.handle_threads(threads)
+
+    def is_enabled(self):
+        # Handle case with no file name
+        if (self.view.file_name() == None):
+            return False
+        return (self.view.file_name().split('\\')[-1] == 'project.json')
 
     def handle_threads(self, threads, offset=0, i=0, dir=1):
         message = "JSON Schema successfully validated"
@@ -78,3 +104,36 @@ class ValidateSchemaApiCall(threading.Thread):
         self.result = False
         return
 
+class TestCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        # threads = []
+        # thread = RetrievePackageNames(5)
+        # threads.append(thread)
+        # thread.start()
+        print(os.getcwd())
+        Popen("powershell.exe -NoProfile -ExecutionPolicy unrestricted -NoExit -Command \"cd "+ os.getcwd() + ";k web")
+        return
+
+class RetrievePackageNames(threading.Thread):
+    def __init__(self,timeout):
+        self.timeout = timeout
+        self.result = None
+        threading.Thread.__init__(self)
+
+    def run(self):
+        try:
+            request = urllib.request.Request("https://www.myget.org/F/aspnetrelease/api/v2/Packages()?$select=Id&$format=json&orderby=DownloadCount&$top=100",
+                headers={"User-Agent": "Sublime"})
+            http_file = urllib.request.urlopen(request, timeout=self.timeout)
+            self.result = []
+            response = json.loads(http_file.read().decode('utf-8'))['d']
+            for package in response:
+                self.result.append(package['Id'])
+            print(self.result)
+            return
+        except (urllib.request.HTTPError) as e:
+            self.message = '%s: HTTP error %s contacting API' % (__name__, str(e.code))
+        except (urllib.request.URLError) as e:
+            self.message = '%s: URL error %s contacting API' % (__name__, str(e.reason))
+        self.result = False
+        return
