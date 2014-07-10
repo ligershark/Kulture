@@ -1,5 +1,9 @@
 {
-	"cmd": ["k.cmd", "build"],
+	"cmd": ["sh", "$packages/vNext/build.sh"],
 	"working_dir": "${project_path}",
-	"file_regex": "(.*)\\(([0-9]+),([0-9]+)\\): error [A-Z,0-9]+"
+	"file_regex": "(.*)\\(([0-9]+),([0-9]+)\\): error [A-Z,0-9]+",
+	"windows":
+	{
+		"cmd": ["k.cmd", "build"]
+	}
 }
