@@ -37,7 +37,7 @@ else:
     installed_dir = os.path.basename(os.getcwd())
 
 
-class TerminalSelector():
+class KTerminalSelector():
     default = None
 
     @staticmethod
@@ -95,9 +95,9 @@ class TerminalSelector():
             if not default:
                 default = 'xterm'
 
-        TerminalSelector.default = default
+        KTerminalSelector.default = default
         return default
-class TerminalCommand():
+class KTerminalCommand():
     def get_path(self, paths):
         if paths:
             return paths[0]
@@ -116,7 +116,7 @@ class TerminalCommand():
                     'not yet been saved')
             for k, v in enumerate(parameters):
                 parameters[k] = v.replace('%CWD%', dir_)
-            args = [TerminalSelector.get()]
+            args = [KTerminalSelector.get()]
             args.extend(parameters)
             encoding = locale.getpreferredencoding(do_setlocale=True)
             if sys.version_info >= (3,):
@@ -128,12 +128,12 @@ class TerminalCommand():
         except (OSError) as exception:
             print(str(exception))
             sublime.error_message('Terminal: The terminal ' +
-                TerminalSelector.get() + ' was not found')
+                KTerminalSelector.get() + ' was not found')
         except (Exception) as exception:
             sublime.error_message('Terminal: ' + str(exception))
 
 
-class OpenTerminalCommand(sublime_plugin.WindowCommand, TerminalCommand):
+class KOpenTerminalCommand(sublime_plugin.WindowCommand, KTerminalCommand):
     def run(self, paths=[], parameters=None):
         path = self.get_path(paths)
         if not path:
@@ -150,20 +150,7 @@ class OpenTerminalCommand(sublime_plugin.WindowCommand, TerminalCommand):
             path = os.path.dirname(path)
         self.run_terminal(path, parameters)
 
-
-class OpenTerminalProjectFolderCommand(sublime_plugin.WindowCommand,
-        TerminalCommand):
-    def run(self, paths=[], parameters=None):
-        path = self.get_path(paths)
-        if not path:
-            return
-
-        folders = [x for x in self.window.folders() if path.find(x) == 0][0:1]
-
-        command = OpenTerminalCommand(self.window)
-        command.run(folders, parameters=parameters)
-
-class KCommand(sublime_plugin.WindowCommand):
+class KRunCommand(sublime_plugin.WindowCommand):
 
     def run(self):
         if (plat == 'win'):
@@ -184,12 +171,12 @@ class KCommand(sublime_plugin.WindowCommand):
         self.window.show_quick_panel(self.commands, self.commandlist)
     def commandlist(self, position):
         if (position > -1):
-            self.window.run_command('open_terminal', {'parameters':[self.commands[position]]})
+            self.window.run_command('k_open_terminal', {'parameters':[self.commands[position]]})
             i = 0;
         else:
             return
 
-class ValidateSchemaCommand(sublime_plugin.TextCommand):
+class KValidateSchemaCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         threads = []
         thread = ValidateSchemaApiCall(5, self.view)
@@ -239,7 +226,7 @@ class ValidateSchemaCommand(sublime_plugin.TextCommand):
         self.view.erase_status("validate_schema")
         sublime.status_message(message)
 
-class ValidateSchemaApiCall(threading.Thread):
+class KValidateSchemaApiCall(threading.Thread):
     def __init__(self, timeout, view):
         self.message = "JSON Schema successfully validated"
         self.timeout = timeout
@@ -274,14 +261,9 @@ class ValidateSchemaApiCall(threading.Thread):
         self.result = False
         return
 
-class TestCommand(sublime_plugin.WindowCommand):
+class KTestCommand(sublime_plugin.WindowCommand):
     def run(self):
-        # threads = []
-        # thread = RetrievePackageNames(5)
-        # threads.append(thread)
-        # thread.start()
-        print(TerminalSelector.get())
-        # Popen("powershell.exe -NoProfile -ExecutionPolicy unrestricted -NoExit -Command \"cd "+ os.getcwd() + ";k web")
+        print('hi')
         return
 
 class RetrievePackageNames(threading.Thread):
