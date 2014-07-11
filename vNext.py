@@ -158,13 +158,17 @@ class KRunCommand(sublime_plugin.WindowCommand):
         else:
             file_name = self.window.folders()[0] + '/project.json'
         try:
-            json_commands = json.load(open(file_name))['commands']
+            json_file = json.load(open(file_name))
         except IOError:
             print("project.json not found")
             return
         self.commands = []
-        for command in json_commands:
-            self.commands.append('k ' + command)
+        try:
+            json_commands = json_file['commands']
+            for command in json_commands:
+                self.commands.append('k ' + command)
+        except LookupError:
+            pass
         self.commands.append('k build')
         self.commands.append('kpm restore')
         self.commands.append('kpm pack')
