@@ -24,6 +24,16 @@ Copy jsonschema folder to `C:\Program Files\Sublime Text 3`
 #### On OS X 10.9.4
 Copy jsonschema folder to `/Applications/Sublime\ Text.app/Contents/MacOS/`
 
+## How to Install this Package
+
+### On Win 8.1
+
+Clone this repo into `C:\Users\t-soshir\AppData\Roaming\Sublime Text 3\Packages`
+
+### On OS X 10.9.4
+
+Clone this repo into `/Users/{user}/Library/Application\ Support/Sublime Text\ 2/Packages`
+
 ##Features
 
 - [Build Integration](#build-integration)
