@@ -25,22 +25,22 @@ There is also a getting started tutorial to show you some of the features includ
 
 # Installation: Windows
 
-0. Perpare Powershell execution policy. In an Admin PowerShell window execute the following command.
-    
-    Set-ExecutionPolicy RemoteSigned
+1. Perpare Powershell execution policy. In an Admin PowerShell window execute the following command.
 
-   Then close your PowerShell prompt and open a cmd prompt.
+  `Set-ExecutionPolicy RemoteSigned`
+
+  > Note: This is a temporary workaround. I have submitted a pull request to ASP.NET home
 
 
-1. Install [ASP.NET vNext Command Line Tools](https://github.com/aspnet/home#getting-started)
+2. Install [ASP.NET vNext Command Line Tools](https://github.com/aspnet/home#getting-started)
 
-2. Download [Sublime Text 3 Build 3059](http://www.sublimetext.com/3)
+3. Download [Sublime Text 3 Build 3059](http://www.sublimetext.com/3)
 
   > Note: This extension has been tested with build 3059 only
 
-3. Install JSONSchema - Unzip [jsonschema-2.3.0.zip](https://pypi.python.org/packages/source/j/jsonschema/jsonschema-2.3.0.zip#md5=0275f70c5f7c65657555ff478a4fc89c) and copy the jsonschema folder to `C:\Program Files\Sublime Text 3`
+4. Install JSONSchema - Unzip [jsonschema-2.3.0.zip](https://pypi.python.org/packages/source/j/jsonschema/jsonschema-2.3.0.zip#md5=0275f70c5f7c65657555ff478a4fc89c) and copy the jsonschema folder to `C:\Program Files\Sublime Text 3`
 
-4. Install Sublime vNext by cloning this repo into `C:\Users\{user}\AppData\Roaming\Sublime Text 3\Packages`
+5. Install Sublime vNext by cloning this repo into `C:\Users\{user}\AppData\Roaming\Sublime Text 3\Packages`
 
   > Note: Remember to replace {user} with your username
 
