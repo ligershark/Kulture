@@ -25,6 +25,13 @@ There is also a getting started tutorial to show you some of the features includ
 
 # Installation: Windows
 
+0. Perpare Powershell execution policy. In an Admin PowerShell window execute the following command.
+    
+    Set-ExecutionPolicy RemoteSigned
+
+   Then close your PowerShell prompt and open a cmd prompt.
+
+
 1. Install [ASP.NET vNext Command Line Tools](https://github.com/aspnet/home#getting-started)
 
 2. Download [Sublime Text 3 Build 3059](http://www.sublimetext.com/3)
