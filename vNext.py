@@ -124,7 +124,14 @@ class KTerminalCommand():
             else:
                 cwd = dir_.encode(encoding)
             print(args)
-            subprocess.Popen(args, cwd=cwd)
+
+            if plat == 'win':
+                startupinfo = subprocess.STARTUPINFO()
+                startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+                subprocess.Popen(args, cwd=cwd, startupinfo=startupinfo)
+            else:
+                subprocess.Popen(args, cwd=cwd)
+
         except (OSError) as exception:
             print(str(exception))
             sublime.error_message('Terminal: The terminal ' +
