@@ -39,7 +39,7 @@ There is also a getting started tutorial to show you some of the features includ
 
   > Note: This extension has been tested with build 3059 only
 
-0. Install JSONSchema - Unzip [jsonschema-2.3.0.zip](https://pypi.python.org/packages/source/j/jsonschema/jsonschema-2.3.0.zip#md5=0275f70c5f7c65657555ff478a4fc89c) and copy the jsonschema folder to `C:\Program Files\Sublime Text 3`
+0. Install JSONSchema - Unzip [jsonschema.zip](http://shirhatti.com/jsonschema.zip) and copy the jsonschema folder to `C:\Program Files\Sublime Text 3`
   ![Where to place jsonschema folder](http://shirhatti.com/folder.PNG)
 
 0. Install Sublime vNext by cloning this repo into `C:\Users\{user}\AppData\Roaming\Sublime Text 3\Packages`
