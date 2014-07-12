@@ -7,7 +7,7 @@ import os
 import sys
 import subprocess
 import locale
-from jsonschema import validate
+import jsonschema
 # Add jsonschema folder to C:\Program Files\Sublime Text 3 as a temporary workaround on Windows
 # Add jsonschema folder to /Applications/Sublime\ Text.app/Contents/MacOS/ as a temporary workaround on Mac
 # https://pypi.python.org/pypi/jsonschema/2.3.0
@@ -183,7 +183,7 @@ class KRunCommand(sublime_plugin.WindowCommand):
 class KValidateSchemaCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         threads = []
-        thread = ValidateSchemaApiCall(5, self.view)
+        thread = KValidateSchemaApiCall(5, self.view)
         threads.append(thread)
         thread.start()
         # self.output_view = self.window.get_output_panel("textarea")
@@ -252,10 +252,11 @@ class KValidateSchemaApiCall(threading.Thread):
                 self.message = "Not a valid JSON file"
                 return
             try:
-                validate(content, schema)
+                jsonschema.validate(content, schema)
             except jsonschema.exceptions.ValidationError as e:
                 self.result = False
                 self.message = "JSON schema validation failed"
+                pass
             return
 
         except (urllib.request.HTTPError) as e:
