@@ -7,40 +7,42 @@ There is also a getting started tutorial to show you some of the features includ
 
 # Installation: Mac OS X
 
-1. Download [Mono](https://github.com/mono/mono) >= 3.4.1 and build from source
+0. Download [Mono](https://github.com/mono/mono) >= 3.4.1 and build from source
 
   > Since building Mono from source requires Mono, I have found that the easiest way to do this is to install a prior version using a package manager like Homebrew `brew install mono`
 
-2. Install [ASP.NET vNext Command Line Tools](https://github.com/aspnet/home#getting-started)
+0. Install [ASP.NET vNext Command Line Tools](https://github.com/aspnet/home#getting-started)
 
-3. Download [Sublime Text 3 Build 3059](http://www.sublimetext.com/3)
+0. Download [Sublime Text 3 Build 3059](http://www.sublimetext.com/3)
 
   > Note: This extension has been tested with build 3059 only
 
-4. Install JSONSchema - Unzip [jsonschema-2.3.0.zip](https://pypi.python.org/packages/source/j/jsonschema/jsonschema-2.3.0.zip#md5=0275f70c5f7c65657555ff478a4fc89c) and copy the jsonschema folder to `/Applications/Sublime\ Text.app/Contents/MacOS/`
+0. Install JSONSchema - Unzip [jsonschema-2.3.0.zip](https://pypi.python.org/packages/source/j/jsonschema/jsonschema-2.3.0.zip#md5=0275f70c5f7c65657555ff478a4fc89c) and copy the jsonschema folder to `/Applications/Sublime\ Text.app/Contents/MacOS/`
 
-5. Install Sublime vNext by cloning this repo into `/Users/{user}/Library/Application\ Support/Sublime\ Text\ 3/Packages`
+0. Install Sublime vNext by cloning this repo into `/Users/{user}/Library/Application\ Support/Sublime\ Text\ 3/Packages`
 
   > Note: Remember to replace {user} with your username
 
 # Installation: Windows
 
-1. Perpare Powershell execution policy. In an Admin PowerShell window execute the following command.
-
+0. Install [ASP.NET vNext Command Line Tools](https://github.com/aspnet/home#getting-started)
+  * Perpare Powershell execution policy. In an Admin PowerShell window execute the following command.
   <pre><code>Set-ExecutionPolicy RemoteSigned</code></pre>
-
   > Note: This is a temporary workaround. I have submitted a pull request to ASP.NET home
+  * From an admin command prompt window run the following command
+  <pre><code>@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.ps1'))"</code></pre>
+  * Close the command prompt window and open a new command prompt window and run the following commands
+  <pre><code>kvm setup
+  kvm install 0.1-alpha-build-0446 -p</code></pre>
 
-
-2. Install [ASP.NET vNext Command Line Tools](https://github.com/aspnet/home#getting-started)
-
-3. Download [Sublime Text 3 Build 3059](http://www.sublimetext.com/3)
+0. Download [Sublime Text 3 Build 3059](http://www.sublimetext.com/3)
 
   > Note: This extension has been tested with build 3059 only
 
-4. Install JSONSchema - Unzip [jsonschema-2.3.0.zip](https://pypi.python.org/packages/source/j/jsonschema/jsonschema-2.3.0.zip#md5=0275f70c5f7c65657555ff478a4fc89c) and copy the jsonschema folder to `C:\Program Files\Sublime Text 3`
+0. Install JSONSchema - Unzip [jsonschema-2.3.0.zip](https://pypi.python.org/packages/source/j/jsonschema/jsonschema-2.3.0.zip#md5=0275f70c5f7c65657555ff478a4fc89c) and copy the jsonschema folder to `C:\Program Files\Sublime Text 3`
+  ![Where to place jsonschema folder](http://shirhatti.com/folder.PNG)
 
-5. Install Sublime vNext by cloning this repo into `C:\Users\{user}\AppData\Roaming\Sublime Text 3\Packages`
+0. Install Sublime vNext by cloning this repo into `C:\Users\{user}\AppData\Roaming\Sublime Text 3\Packages`
 
   <pre><code>git clone https://github.com/shirhatti/vNext.git</code></pre>
 
