@@ -19,7 +19,7 @@ There is also a getting started tutorial to show you some of the features includ
 
 4. Install JSONSchema - Unzip [jsonschema-2.3.0.zip](https://pypi.python.org/packages/source/j/jsonschema/jsonschema-2.3.0.zip#md5=0275f70c5f7c65657555ff478a4fc89c) and copy the jsonschema folder to `/Applications/Sublime\ Text.app/Contents/MacOS/`
 
-5. Install Sublime vNext by cloning this repo into `/Users/{user}/Library/Application\ Support/Sublime Text\ 3/Packages`
+5. Install Sublime vNext by cloning this repo into `/Users/{user}/Library/Application\ Support/Sublime\ Text\ 3/Packages`
 
   > Note: Remember to replace {user} with your username
 
@@ -27,7 +27,7 @@ There is also a getting started tutorial to show you some of the features includ
 
 1. Perpare Powershell execution policy. In an Admin PowerShell window execute the following command.
 
-  `Set-ExecutionPolicy RemoteSigned`
+  <pre><code>Set-ExecutionPolicy RemoteSigned</code></pre>
 
   > Note: This is a temporary workaround. I have submitted a pull request to ASP.NET home
 
@@ -42,7 +42,10 @@ There is also a getting started tutorial to show you some of the features includ
 
 5. Install Sublime vNext by cloning this repo into `C:\Users\{user}\AppData\Roaming\Sublime Text 3\Packages`
 
-  > Note: Remember to replace {user} with your username
+  <pre><code>git clone https://github.com/shirhatti/vNext.git</code></pre>
+
+  > Note: The Sublime Text 3 directory may not exist if you have never launched Sublime before. If you are unable to locate this directory try launching Sublime and try again
+
 
 #Getting Started
 
