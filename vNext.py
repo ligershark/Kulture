@@ -7,6 +7,7 @@ import os
 import sys
 import subprocess
 import locale
+sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 import jsonschema
 # Add jsonschema folder to C:\Program Files\Sublime Text 3 as a temporary workaround on Windows
 # Add jsonschema folder to /Applications/Sublime\ Text.app/Contents/MacOS/ as a temporary workaround on Mac
