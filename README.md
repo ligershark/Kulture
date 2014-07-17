@@ -32,6 +32,7 @@ There is also a getting started tutorial to show you some of the features includ
   * Close the command prompt window and open a new command prompt window and run the following commands
   <pre><code>kvm setup
   kvm install 0.1-alpha-build-0446 -p</code></pre>
+  * If Sublime was already installed and running while installing ASP.NET vNext Command Line Tools, you will need to restart Sublime for the changes to work.
 
 0. Download [Sublime Text 3 Build 3059](http://www.sublimetext.com/3)
 
