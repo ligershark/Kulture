@@ -187,11 +187,6 @@ class KRunCommand(sublime_plugin.WindowCommand):
             i = 0;
         else:
             return
-            
-class KTestCommand(sublime_plugin.WindowCommand):
-    def run(self):
-        print('hi')
-        return
 
 class RetrievePackageNames(threading.Thread):
     def __init__(self,timeout):
