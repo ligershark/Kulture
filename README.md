@@ -70,7 +70,7 @@ Now, let's go ahead and tell Sublime to use `vNext` as the build system. To do t
 
 You should be able to see the output of your build in the output window towards the bottom of your screen. At this point your code should have built successfully.
 
-Now let's see what the experience looks like if there is an error in your .cs file. Introduce an error in the Program.cs file and try building again. You should now see errors in the output window. You can navigate through the errors as follows
+Now let's see what the experience looks like if there is an error in your .cs file. Introduce an error in the Startup.cs file and try building again. You should now see errors in the output window. You can navigate through the errors as follows
 
 - `F4` takes you to the next error
 - `Shft + F4` takes you to the previous error
