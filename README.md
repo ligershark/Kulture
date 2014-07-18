@@ -13,20 +13,25 @@ There is also a getting started tutorial to show you some of the features includ
 
 0. Install [ASP.NET vNext Command Line Tools](https://github.com/aspnet/home#getting-started)
 
-0. Download [Sublime Text 3 Build 3059](http://www.sublimetext.com/3)
+0. Download [Sublime Text 3](http://www.sublimetext.com/3)
 
-  > Note: This extension has been tested with build 3059 only
+0. Install Sublime vNext
 
-0. Install Sublime vNext by cloning this repo into `/Users/{user}/Library/Application\ Support/Sublime\ Text\ 3/Packages`
+  __Using the [Package Control Plugin](https://sublime.wbond.net/)__
+  * Bring up the Command Palette (Cmd + Shift + P on OS X, Ctrl + Shift + P on Windows).
+  * Select `Package Control: Install Package`
+  * Select `Schema Validator` when the list appears.
+  * Package Control will automatically keep Schema Validator up to date with the latest version.
 
-  > Note: Remember to replace {user} with your username
+  __Manual Install__
+  * Install Sublime vNext by cloning this repo into `/Users/{user}/Library/Application\ Support/Sublime\ Text\ 3/Packages`
+    <pre><code>git clone https://github.com/shirhatti/vNext.git</code></pre>
 
 # Installation: Windows
 
 0. Install [ASP.NET vNext Command Line Tools](https://github.com/aspnet/home#getting-started)
   * Perpare Powershell execution policy. In an Admin PowerShell window execute the following command.
   <pre><code>Set-ExecutionPolicy RemoteSigned</code></pre>
-  > Note: This is a temporary workaround. I have submitted a pull request to ASP.NET home
   * From an admin command prompt window run the following command
   <pre><code>@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.ps1'))"</code></pre>
   * Close the command prompt window and open a new command prompt window and run the following commands
@@ -34,13 +39,19 @@ There is also a getting started tutorial to show you some of the features includ
   kvm install 0.1-alpha-build-0446 -p</code></pre>
   * If Sublime was already installed and running while installing ASP.NET vNext Command Line Tools, you will need to restart Sublime for the changes to work.
 
-0. Download [Sublime Text 3 Build 3059](http://www.sublimetext.com/3)
+0. Download and Install [Sublime Text 3](http://www.sublimetext.com/3)
 
-  > Note: This extension has been tested with build 3059 only
+0. Install Sublime vNext
 
-0. Install Sublime vNext by cloning this repo into `C:\Users\{user}\AppData\Roaming\Sublime Text 3\Packages`
+  __Using the [Package Control Plugin](https://sublime.wbond.net/)__
+  * Bring up the Command Palette (Cmd + Shift + P on OS X, Ctrl + Shift + P on Windows).
+  * Select `Package Control: Install Package`
+  * Select `Schema Validator` when the list appears.
+  * Package Control will automatically keep Schema Validator up to date with the latest version.
 
-  <pre><code>git clone https://github.com/shirhatti/vNext.git</code></pre>
+  __Manual Install__
+  * Install Sublime vNext by cloning this repo into `C:\Users\{user}\AppData\Roaming\Sublime Text 3\Packages`
+    <pre><code>git clone https://github.com/shirhatti/vNext.git</code></pre>
 
   > Note: The Sublime Text 3 directory may not exist if you have never launched Sublime before. If you are unable to locate this directory try launching Sublime and try again
 
