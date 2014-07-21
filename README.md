@@ -1,4 +1,4 @@
-# Sublime vNext
+# Sublime Kulture
 
 A Sublime Text 3 extension for [ASP.NET vNext](https://github.com/aspnet/home)
 
@@ -15,17 +15,16 @@ There is also a getting started tutorial to show you some of the features includ
 
 0. Download [Sublime Text 3](http://www.sublimetext.com/3)
 
-0. Install Sublime vNext
-
+0. Install Sublime Kulture
   __Using the [Package Control Plugin](https://sublime.wbond.net/)__
   * Bring up the Command Palette (Cmd + Shift + P on OS X, Ctrl + Shift + P on Windows).
   * Select `Package Control: Install Package`
-  * Select `Schema Validator` when the list appears.
+  * Select `Kulture` when the list appears.
   * Package Control will automatically keep Schema Validator up to date with the latest version.
 
   __Manual Install__
   * Install Sublime vNext by cloning this repo into `/Users/{user}/Library/Application\ Support/Sublime\ Text\ 3/Packages`
-    <pre><code>git clone https://github.com/shirhatti/vNext.git</code></pre>
+    <pre><code>git clone https://github.com/shirhatti/Kulture.git</code></pre>
 
 # Installation: Windows
 
@@ -41,17 +40,17 @@ There is also a getting started tutorial to show you some of the features includ
 
 0. Download and Install [Sublime Text 3](http://www.sublimetext.com/3)
 
-0. Install Sublime vNext
+0. Install Sublime Kulture
 
   __Using the [Package Control Plugin](https://sublime.wbond.net/)__
   * Bring up the Command Palette (Cmd + Shift + P on OS X, Ctrl + Shift + P on Windows).
   * Select `Package Control: Install Package`
-  * Select `Schema Validator` when the list appears.
+  * Select `Kulture` when the list appears.
   * Package Control will automatically keep Schema Validator up to date with the latest version.
 
   __Manual Install__
   * Install Sublime vNext by cloning this repo into `C:\Users\{user}\AppData\Roaming\Sublime Text 3\Packages`
-    <pre><code>git clone https://github.com/shirhatti/vNext.git</code></pre>
+    <pre><code>git clone https://github.com/shirhatti/Kulture.git</code></pre>
 
   > Note: The Sublime Text 3 directory may not exist if you have never launched Sublime before. If you are unable to locate this directory try launching Sublime and try again
 
@@ -63,6 +62,10 @@ This tutorial will show you how you can get started with ASP.NET vNext in Sublim
 The first thing we will do is grab the samples. Using your favorite git client clone the repo at [ASP.NET vNext Home](https://github.com/aspnet/home)
 
     git clone https://github.com/aspnet/Home.git
+
+If you are on mac, clone this repo
+
+    git clone https://github.com/shirhatti/Home.git
 
 Let's go ahead and open the included HelloMvc sample in Sublime. In Sublime, click on `File -> Open Folder` and navigate to the `Home\Samples\HelloMvc` to open it up.
 
