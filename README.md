@@ -24,7 +24,7 @@ There is also a getting started tutorial to show you some of the features includ
 
   __Manual Install__
   * Install Sublime vNext by cloning this repo into `/Users/{user}/Library/Application\ Support/Sublime\ Text\ 3/Packages`
-    <pre><code>git clone https://github.com/shirhatti/Kulture.git</code></pre>
+    <pre><code>git clone https://github.com/ligershark/Kulture.git</code></pre>
 
 # Installation: Windows
 
@@ -50,7 +50,7 @@ There is also a getting started tutorial to show you some of the features includ
 
   __Manual Install__
   * Install Sublime vNext by cloning this repo into `C:\Users\{user}\AppData\Roaming\Sublime Text 3\Packages`
-    <pre><code>git clone https://github.com/shirhatti/Kulture.git</code></pre>
+    <pre><code>git clone https://github.com/ligershark/Kulture.git</code></pre>
 
   > Note: The Sublime Text 3 directory may not exist if you have never launched Sublime before. If you are unable to locate this directory try launching Sublime and try again
 
