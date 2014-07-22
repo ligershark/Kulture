@@ -17,6 +17,7 @@ There is also a getting started tutorial to show you some of the features includ
 
 0. Install Sublime Kulture
   __Using the [Package Control Plugin](https://sublime.wbond.net/)__
+  * Follow these [instructions to install package control](https://sublime.wbond.net/installation)
   * Bring up the Command Palette (Cmd + Shift + P on OS X, Ctrl + Shift + P on Windows).
   * Select `Package Control: Install Package`
   * Select `Kulture` when the list appears.
@@ -43,6 +44,7 @@ There is also a getting started tutorial to show you some of the features includ
 0. Install Sublime Kulture
 
   __Using the [Package Control Plugin](https://sublime.wbond.net/)__
+  * Follow these [instructions to install package control](https://sublime.wbond.net/installation)
   * Bring up the Command Palette (Cmd + Shift + P on OS X, Ctrl + Shift + P on Windows).
   * Select `Package Control: Install Package`
   * Select `Kulture` when the list appears.
