@@ -17,4 +17,4 @@ do
 	directory=$directory"../"
 	temp=$directory"project.json"
 done
-k build $directory
+kpm build $directory
