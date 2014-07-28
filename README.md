@@ -7,10 +7,6 @@ There is also a getting started tutorial to show you some of the features includ
 
 # Installation: Mac OS X
 
-0. Download [Mono](https://github.com/mono/mono) >= 3.4.1 and build from source
-
-  > Since building Mono from source requires Mono, I have found that the easiest way to do this is to install a prior version using a package manager like Homebrew `brew install mono`
-
 0. Install [ASP.NET vNext Command Line Tools](https://github.com/aspnet/home#getting-started)
 
 0. Download [Sublime Text 3](http://www.sublimetext.com/3)
