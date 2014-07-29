@@ -7,10 +7,6 @@ There is also a getting started tutorial to show you some of the features includ
 
 # Installation: Mac OS X
 
-0. Download [Mono](https://github.com/mono/mono) >= 3.4.1 and build from source
-
-  > Since building Mono from source requires Mono, I have found that the easiest way to do this is to install a prior version using a package manager like Homebrew `brew install mono`
-
 0. Install [ASP.NET vNext Command Line Tools](https://github.com/aspnet/home#getting-started)
 
 0. Download [Sublime Text 3](http://www.sublimetext.com/3)
@@ -63,10 +59,6 @@ This tutorial will show you how you can get started with ASP.NET vNext in Sublim
 
 The first thing we will do is grab the samples. Using your favorite git client clone the repo at [ASP.NET vNext Home](https://github.com/aspnet/home)
 
-    git clone https://github.com/aspnet/Home.git
-
-If you are on mac, clone this repo
-
     git clone https://github.com/shirhatti/Home.git
 
 Let's go ahead and open the included HelloMvc sample in Sublime. In Sublime, click on `File -> Open Folder` and navigate to the `Home\Samples\HelloMvc` to open it up.
@@ -99,45 +91,12 @@ After we resolve all the errors we have introduced, let us try and run the appli
 - Press `Ctrl(Cmd) + Shift + P` to bring up the command palette
 - Type `Run K Commands` and hit Enter (Return)
 - Type `k web` and hit Enter (Return)
+- If you are on a Mac, type `k kestrel` and hit Enter (Return)
 
 You should see a Terminal/Powershell window launch and start running your server. You can navigate to `http://localhost:5001` in your favorite browser you view the website.
 
-  > This will fail on a Mac today if you don't have KestrelHTTPServer installed. I'm working to update this guide
-
-We also have JSON Schema validation. Let's try it out. Open up *project.json*. Let's remove the first `{` after `dependencies`
-
-- Press `Ctrl(Cmd) + Shift + P` to bring up the command palette
-- Type `Validate JSON Schema` and hit Enter (Return)
-
-You should be able to see the result of your operation in bottom left of the status bar
-
-You can try playing around with adding/removing attributes to your *project.json* to see if it still verifies against the schema
 
 ## Credits
-
-### [jsonschema](https://github.com/Julian/jsonschema)
-
-<pre>
-Copyright (c) 2013 Julian Berman
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-</pre>
 
 ### [Sublime Terminal](https://github.com/wbond/sublime_terminal)
 
