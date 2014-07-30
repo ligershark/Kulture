@@ -60,6 +60,17 @@ This tutorial will show you how you can get started with ASP.NET vNext in Sublim
 The first thing we will do is grab the samples. Using your favorite git client clone the repo at [ASP.NET vNext Home](https://github.com/aspnet/home)
 
     git clone https://github.com/shirhatti/Home.git
+    
+If you prefering using `yo` instead you can download our yeoman generator
+ > Note: This requires you to have node.js and npm already installed
+
+    npm install -g yo
+    npm install -g generator-aspnet
+    
+To run the yeoman scaffolder, type
+    
+    yo aspnet
+    
 
 Let's go ahead and open the included HelloMvc sample in Sublime. In Sublime, click on `File -> Open Folder` and navigate to the `Home\Samples\HelloMvc` to open it up.
 
