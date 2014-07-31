@@ -7,6 +7,7 @@ import os
 import sys
 import subprocess
 import locale
+import re
 
 if os.name == 'nt':
     plat = 'win'
