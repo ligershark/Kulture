@@ -7,6 +7,7 @@ import os
 import sys
 import subprocess
 import locale
+import re
 
 if os.name == 'nt':
     plat = 'win'
@@ -80,7 +81,7 @@ class KTerminalSelector():
         else:
             ps = 'ps -eo comm | grep -E "gnome-session|ksmserver|' + \
                 'xfce4-session" | grep -v grep'
-            wm = [x.replace("\n", '') for x in os.popen(ps)]
+            wm = [x.replace('\n', '') for x in os.popen(ps)]
             if wm:
                 if wm[0] == 'gnome-session':
                     default = 'gnome-terminal'
@@ -163,22 +164,32 @@ class KRunCommand(sublime_plugin.WindowCommand):
         try:
             json_file = json.load(open(file_name))
         except IOError:
-            print("project.json not found")
+            print('project.json not found')
             return
         self.commands = []
         try:
-            json_commands = json_file['commands']
+            json_commands = json_file['commands'] 
             for command in json_commands:
-                self.commands.append('k ' + command)
+                args = json_commands[command]
+                if command.lower() == 'web' or command.lower() == 'kestrel':
+                    url_regex = r'(?:--server.urls |server.urls=)(http:\/\/[^\s]+)'
+                    match = re.search(url_regex, args)
+                    try:
+                        url = match.group(1)
+                    except AttributeError as e:
+                        url = 'http://localhost:5000'
+                    self.commands.append(['k ' + command, 'Run server at ' + url])
+                else:
+                    self.commands.append(['k ' + command, args])
         except LookupError:
             pass
-        self.commands.append('k build')
-        self.commands.append('kpm restore')
-        self.commands.append('kpm pack')
+        self.commands.append(['kpm restore', 'Restore packages'])
+        self.commands.append(['kpm pack', 'Bundle application for deployment'])
+        self.commands.append(['kpm build', 'Build NuGet packages for the project in given directory'])
         self.window.show_quick_panel(self.commands, self.commandlist)
     def commandlist(self, position):
         if (position > -1):
-            self.window.run_command('k_open_terminal', {'parameters':[self.commands[position]]})
+            self.window.run_command('k_open_terminal', {'parameters':[self.commands[position][0]]})
             i = 0;
         else:
             return
@@ -191,8 +202,8 @@ class RetrievePackageNames(threading.Thread):
 
     def run(self):
         try:
-            request = urllib.request.Request("https://www.myget.org/F/aspnetrelease/api/v2/Packages()?$select=Id&$format=json&orderby=DownloadCount&$top=100",
-                headers={"User-Agent": "Sublime"})
+            request = urllib.request.Request('https://www.myget.org/F/aspnetrelease/api/v2/Packages()?$select=Id&$format=json&orderby=DownloadCount&$top=100',
+                headers={'User-Agent': 'Sublime'})
             http_file = urllib.request.urlopen(request, timeout=self.timeout)
             self.result = []
             response = json.loads(http_file.read().decode('utf-8'))['d']
