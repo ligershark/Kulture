@@ -1,9 +1,9 @@
 {
 	"cmd": ["sh", "$packages/Kulture/build.sh"],
 	"working_dir": "${project_path}",
-	"file_regex": "(.*)\\(([0-9]+),([0-9]+)\\): error [A-Z,0-9]+",
+	"file_regex": "(.*)\\(([0-9]+),([0-9]+)\\): (?:error|warning) [A-Z,0-9]+",
 	"windows":
 	{
-		"cmd": ["kpm.cmd", "build"]
+		"cmd": ["$packages\\Kulture\\build.cmd", "build"]
 	}
 }
