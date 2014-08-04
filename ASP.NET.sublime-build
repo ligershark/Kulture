@@ -4,6 +4,6 @@
 	"file_regex": "(.*)\\(([0-9]+),([0-9]+)\\): (?:error|warning) [A-Z,0-9]+",
 	"windows":
 	{
-		"cmd": ["kpm.cmd", "build"]
+		"cmd": ["$packages\\Kulture\\build.cmd", "build"]
 	}
 }
