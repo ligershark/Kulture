@@ -17,7 +17,7 @@ There is also a getting started tutorial to show you some of the features includ
   * Bring up the Command Palette (Cmd + Shift + P on OS X, Ctrl + Shift + P on Windows).
   * Select `Package Control: Install Package`
   * Select `Kulture` when the list appears.
-  * Package Control will automatically keep Schema Validator up to date with the latest version.
+  * Package Control will automatically keep Kulture up to date with the latest version.
 
   __Manual Install__
   * Install Sublime vNext by cloning this repo into `/Users/{user}/Library/Application\ Support/Sublime\ Text\ 3/Packages`
@@ -29,7 +29,7 @@ There is also a getting started tutorial to show you some of the features includ
   * Perpare Powershell execution policy. In an Admin PowerShell window execute the following command.
   <pre><code>Set-ExecutionPolicy RemoteSigned</code></pre>
   * From an admin command prompt window run the following command
-  <pre><code>@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.ps1'))"</code></pre>
+  <pre><code>powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.ps1'))"</code></pre>
   * Close the command prompt window and open a new command prompt window and run the following commands
   <pre><code>kvm setup
   kvm install 1.0.0-alpha3-10202 -p</code></pre>
