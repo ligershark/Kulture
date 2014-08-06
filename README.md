@@ -17,7 +17,7 @@ There is also a getting started tutorial to show you some of the features includ
   * Bring up the Command Palette (Cmd + Shift + P on OS X, Ctrl + Shift + P on Windows).
   * Select `Package Control: Install Package`
   * Select `Kulture` when the list appears.
-  * Package Control will automatically keep Schema Validator up to date with the latest version.
+  * Package Control will automatically keep Kulture up to date with the latest version.
 
   __Manual Install__
   * Install Sublime vNext by cloning this repo into `/Users/{user}/Library/Application\ Support/Sublime\ Text\ 3/Packages`
