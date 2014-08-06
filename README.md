@@ -5,6 +5,8 @@ A Sublime Text 3 extension for [ASP.NET vNext](https://github.com/aspnet/home)
 In this readme you will learn how to install the components to get started with ASP.NET in Sublime Text 3.
 There is also a getting started tutorial to show you some of the features included with this release.
 
+[![Video](http://img.youtube.com/vi/1g2I9SJZ5XI/0.jpg)](https://www.youtube.com/watch?v=1g2I9SJZ5XI)
+
 # Installation: Mac OS X
 
 0. Install [ASP.NET vNext Command Line Tools](https://github.com/aspnet/home#getting-started)
