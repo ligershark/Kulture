@@ -29,7 +29,7 @@ There is also a getting started tutorial to show you some of the features includ
   * Perpare Powershell execution policy. In an Admin PowerShell window execute the following command.
   <pre><code>Set-ExecutionPolicy RemoteSigned</code></pre>
   * From an admin command prompt window run the following command
-  <pre><code>powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.ps1'))"</code></pre>
+  <pre><code>@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.ps1'))"</code></pre>
   * Close the command prompt window and open a new command prompt window and run the following commands
   <pre><code>kvm setup
   kvm install 1.0.0-alpha3-10202 -p</code></pre>
