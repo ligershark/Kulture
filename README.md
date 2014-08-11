@@ -5,6 +5,8 @@ A Sublime Text 3 extension for [ASP.NET vNext](https://github.com/aspnet/home)
 In this readme you will learn how to install the components to get started with ASP.NET in Sublime Text 3.
 There is also a getting started tutorial to show you some of the features included with this release.
 
+[![Video](http://img.youtube.com/vi/1g2I9SJZ5XI/0.jpg)](https://www.youtube.com/watch?v=1g2I9SJZ5XI)
+
 # Installation: Mac OS X
 
 0. Install [ASP.NET vNext Command Line Tools](https://github.com/aspnet/home#getting-started)
@@ -17,10 +19,10 @@ There is also a getting started tutorial to show you some of the features includ
   * Bring up the Command Palette (Cmd + Shift + P on OS X, Ctrl + Shift + P on Windows).
   * Select `Package Control: Install Package`
   * Select `Kulture` when the list appears.
-  * Package Control will automatically keep Schema Validator up to date with the latest version.
+  * Package Control will automatically keep Kulture up to date with the latest version.
 
   __Manual Install__
-  * Install Sublime vNext by cloning this repo into `/Users/{user}/Library/Application\ Support/Sublime\ Text\ 3/Packages`
+  * Install Sublime Kulture by cloning this repo into `/Users/{user}/Library/Application\ Support/Sublime\ Text\ 3/Packages`
     <pre><code>git clone https://github.com/ligershark/Kulture.git</code></pre>
 
 # Installation: Windows
@@ -55,7 +57,7 @@ There is also a getting started tutorial to show you some of the features includ
 
 #Getting Started
 
-This tutorial will show you how you can get started with ASP.NET vNext in Sublime Text 3. After completing this tutorial you will be familiar with how to use Sublime vNext and its primary features.
+This tutorial will show you how you can get started with ASP.NET vNext in Sublime Text 3. After completing this tutorial you will be familiar with how to use Sublime Kulture and its primary features.
 
 The first thing we will do is grab the samples. Using your favorite git client clone the repo at [ASP.NET vNext Home](https://github.com/aspnet/home)
 
@@ -84,7 +86,7 @@ Since we just grabbed this from source control there are NuGet packages which th
 
 You should see a Terminal/Powershell window launch and execute your commands.
 
-Now, let's go ahead and tell Sublime to use `vNext` as the build system. To do this, click `Tools -> Build System -> vNext`
+Now, let's go ahead and tell Sublime to use `ASP.NET` as the build system. To do this, click `Tools -> Build System -> ASP.NET`
 
 - Press `Ctrl(Cmd) + B` or `F7` to build projects
 
