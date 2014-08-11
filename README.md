@@ -22,7 +22,7 @@ There is also a getting started tutorial to show you some of the features includ
   * Package Control will automatically keep Kulture up to date with the latest version.
 
   __Manual Install__
-  * Install Sublime vNext by cloning this repo into `/Users/{user}/Library/Application\ Support/Sublime\ Text\ 3/Packages`
+  * Install Sublime Kulture by cloning this repo into `/Users/{user}/Library/Application\ Support/Sublime\ Text\ 3/Packages`
     <pre><code>git clone https://github.com/ligershark/Kulture.git</code></pre>
 
 # Installation: Windows
@@ -57,7 +57,7 @@ There is also a getting started tutorial to show you some of the features includ
 
 #Getting Started
 
-This tutorial will show you how you can get started with ASP.NET vNext in Sublime Text 3. After completing this tutorial you will be familiar with how to use Sublime vNext and its primary features.
+This tutorial will show you how you can get started with ASP.NET vNext in Sublime Text 3. After completing this tutorial you will be familiar with how to use Sublime Kulture and its primary features.
 
 The first thing we will do is grab the samples. Using your favorite git client clone the repo at [ASP.NET vNext Home](https://github.com/aspnet/home)
 
@@ -86,7 +86,7 @@ Since we just grabbed this from source control there are NuGet packages which th
 
 You should see a Terminal/Powershell window launch and execute your commands.
 
-Now, let's go ahead and tell Sublime to use `vNext` as the build system. To do this, click `Tools -> Build System -> vNext`
+Now, let's go ahead and tell Sublime to use `ASP.NET` as the build system. To do this, click `Tools -> Build System -> ASP.NET`
 
 - Press `Ctrl(Cmd) + B` or `F7` to build projects
 
