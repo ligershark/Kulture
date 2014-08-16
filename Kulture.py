@@ -8,6 +8,7 @@ import sys
 import subprocess
 import locale
 import re
+import shlex
 
 if os.name == 'nt':
     plat = 'win'
@@ -115,6 +116,12 @@ class KTerminalCommand():
                 parameters[k] = v.replace('%CWD%', dir_)
             args = [KTerminalSelector.get()]
             args.extend(parameters)
+
+            if args[0] == 'gnome-terminal':
+                args = shlex.split(args[0] + ' -x bash -ic "' + args[1] + '"')
+            elif args[0] in ['terminal', 'konsole', 'xterm']:
+                args = shlex.split(args[0] + ' -e bash -ic "' + args[1] + '"')
+
             encoding = locale.getpreferredencoding(do_setlocale=True)
             if sys.version_info >= (3,):
                 cwd = dir_
@@ -126,6 +133,8 @@ class KTerminalCommand():
                 startupinfo = subprocess.STARTUPINFO()
                 startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
                 subprocess.Popen(args, cwd=cwd, startupinfo=startupinfo)
+            elif plat == 'linux':
+                subprocess.Popen(args)
             else:
                 subprocess.Popen(args, cwd=cwd)
 
