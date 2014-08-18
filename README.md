@@ -106,7 +106,7 @@ After we resolve all the errors we have introduced, let us try and run the appli
 - Type `k web` and hit Enter (Return)
 - If you are on a Mac, type `k kestrel` and hit Enter (Return)
 
-You should see a Terminal/Powershell window launch and start running your server. You can navigate to `http://localhost:5001` in your favorite browser you view the website.
+You should see a Terminal/Powershell window launch and start running your server. You can navigate to `http://localhost:5001` (or `http://localhost:5000` on a Mac) in your favorite browser you view the website.
 
 
 ## Credits
