@@ -84,6 +84,8 @@ Since we just grabbed this from source control there are NuGet packages which th
 - Type `Run K Commands` and hit Enter (Return)
 - Type `kpm restore` and hit Enter (Return)
 
+_Note:_ when executing `kpm restore` if you get an error about missing NuGet packages you can execute the alternate command 'kpm restore -s https://www.myget.org/F/aspnetvnext/api/v2`
+
 You should see a Terminal/Powershell window launch and execute your commands.
 
 Now, let's go ahead and tell Sublime to use `ASP.NET` as the build system. To do this, click `Tools -> Build System -> ASP.NET`
