@@ -166,10 +166,14 @@ class KOpenTerminalCommand(sublime_plugin.WindowCommand, KTerminalCommand):
 class KRunCommand(sublime_plugin.WindowCommand):
 
     def run(self):
-        if (plat == 'win'):
-            file_name = self.window.folders()[0] + '\\project.json'
-        else:
-            file_name = self.window.folders()[0] + '/project.json'
+        # find project.json by starting with the dir of the file being edited
+        file_name = self.findProjectJsonFile();
+
+        if file_name is None:
+            print('Unable to locate project.json from file ['+self.window.active_view().file_name()+']');
+            # todo: write an error to the status bar
+            return
+
         try:
             json_file = json.load(open(file_name))
         except IOError:
@@ -202,6 +206,30 @@ class KRunCommand(sublime_plugin.WindowCommand):
             i = 0;
         else:
             return
+
+    def findProjectJsonFile(self):
+        currentFile = self.window.active_view().file_name();
+        currentDir = os.path.dirname(currentFile);
+
+        pathToCheck = os.path.join(currentDir,'project.json');
+        previousPath = '';
+
+        counter = 0
+        while counter < 100:
+            counter += 1
+            
+            print('checking for project.json at: ['+pathToCheck+']');
+
+            if os.path.isfile(pathToCheck):
+                print('project.json found at: ['+pathToCheck+']');
+                return pathToCheck;
+
+            previousPath = pathToCheck;
+            parentDir = os.path.abspath(os.path.join(os.path.dirname(pathToCheck),os.pardir));
+            pathToCheck = os.path.join(parentDir,'project.json');
+
+        print('path to project.json not found');
+        return;
 
 class RetrievePackageNames(threading.Thread):
     def __init__(self,timeout):
