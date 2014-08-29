@@ -109,9 +109,17 @@ class KTerminalCommand():
 
     def run_terminal(self, dir_, parameters):
         try:
+            print('in run_terminal looking for project.json');
+            pathToProjJson = self.findProjectJsonFile();
+            print('path to project.json'+pathToProjJson);
+            
+            print('Updating dir_ to folder that contains project.json. Current value ['+dir_+']');
+            dir_ = os.path.dirname(self.findProjectJsonFile());
+            print('New value for dir_'+dir_+']');
             if not dir_:
                 raise NotFoundError('The file open in the selected view has ' +
                     'not yet been saved')
+
             for k, v in enumerate(parameters):
                 parameters[k] = v.replace('%CWD%', dir_)
             args = [KTerminalSelector.get()]
@@ -144,6 +152,30 @@ class KTerminalCommand():
                 KTerminalSelector.get() + ' was not found')
         except (Exception) as exception:
             sublime.error_message('Terminal: ' + str(exception))
+
+    def findProjectJsonFile(self):
+        currentFile = self.window.active_view().file_name();
+        currentDir = os.path.dirname(currentFile);
+
+        pathToCheck = os.path.join(currentDir,'project.json');
+        previousPath = '';
+
+        counter = 0
+        while counter < 100:
+            counter += 1
+            
+            print('checking for project.json at: ['+pathToCheck+']');
+
+            if os.path.isfile(pathToCheck):
+                print('project.json found at: ['+pathToCheck+']');
+                return pathToCheck;
+
+            previousPath = pathToCheck;
+            parentDir = os.path.abspath(os.path.join(os.path.dirname(pathToCheck),os.pardir));
+            pathToCheck = os.path.join(parentDir,'project.json');
+
+        print('path to project.json not found');
+        return;
 
 
 class KOpenTerminalCommand(sublime_plugin.WindowCommand, KTerminalCommand):
