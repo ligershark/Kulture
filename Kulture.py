@@ -109,6 +109,10 @@ class KTerminalCommand():
 
     def run_terminal(self, dir_, parameters):
         try:
+            if not dir_:
+                raise NotFoundError('The file open in the selected view has ' +
+                    'not yet been saved')
+
             print('in run_terminal looking for project.json');
             pathToProjJson = self.findProjectJsonFile();
             print('path to project.json'+pathToProjJson);
@@ -116,9 +120,7 @@ class KTerminalCommand():
             print('Updating dir_ to folder that contains project.json. Current value ['+dir_+']');
             dir_ = os.path.dirname(self.findProjectJsonFile());
             print('New value for dir_'+dir_+']');
-            if not dir_:
-                raise NotFoundError('The file open in the selected view has ' +
-                    'not yet been saved')
+            
 
             for k, v in enumerate(parameters):
                 parameters[k] = v.replace('%CWD%', dir_)
@@ -241,6 +243,11 @@ class KRunCommand(sublime_plugin.WindowCommand):
 
     def findProjectJsonFile(self):
         currentFile = self.window.active_view().file_name();
+        if not currentFile:
+            msg = 'Kulture: Please save the file you are editing and try again'
+            sublime.error_message(msg)
+            raise NotFoundError(msg)
+
         currentDir = os.path.dirname(currentFile);
 
         pathToCheck = os.path.join(currentDir,'project.json');
