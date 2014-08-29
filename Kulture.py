@@ -113,13 +113,13 @@ class KTerminalCommand():
                 raise NotFoundError('The file open in the selected view has ' +
                     'not yet been saved')
 
-            print('in run_terminal looking for project.json');
-            pathToProjJson = self.findProjectJsonFile();
-            print('path to project.json'+pathToProjJson);
+            print('in run_terminal looking for project.json')
+            pathToProjJson = self.findProjectJsonFile()
+            print('path to project.json'+pathToProjJson)
             
-            print('Updating dir_ to folder that contains project.json. Current value ['+dir_+']');
-            dir_ = os.path.dirname(self.findProjectJsonFile());
-            print('New value for dir_'+dir_+']');
+            print('Updating dir_ to folder that contains project.json. Current value ['+dir_+']')
+            dir_ = os.path.dirname(self.findProjectJsonFile())
+            print('New value for dir_'+dir_+']')
             
 
             for k, v in enumerate(parameters):
@@ -156,28 +156,28 @@ class KTerminalCommand():
             sublime.error_message('Terminal: ' + str(exception))
 
     def findProjectJsonFile(self):
-        currentFile = self.window.active_view().file_name();
-        currentDir = os.path.dirname(currentFile);
+        currentFile = self.window.active_view().file_name()
+        currentDir = os.path.dirname(currentFile)
 
-        pathToCheck = os.path.join(currentDir,'project.json');
-        previousPath = '';
+        pathToCheck = os.path.join(currentDir,'project.json')
+        previousPath = ''
 
         counter = 0
         while counter < 100:
             counter += 1
             
-            print('checking for project.json at: ['+pathToCheck+']');
+            print('checking for project.json at: ['+pathToCheck+']')
 
             if os.path.isfile(pathToCheck):
-                print('project.json found at: ['+pathToCheck+']');
-                return pathToCheck;
+                print('project.json found at: ['+pathToCheck+']')
+                return pathToCheck
 
-            previousPath = pathToCheck;
-            parentDir = os.path.abspath(os.path.join(os.path.dirname(pathToCheck),os.pardir));
-            pathToCheck = os.path.join(parentDir,'project.json');
+            previousPath = pathToCheck
+            parentDir = os.path.abspath(os.path.join(os.path.dirname(pathToCheck),os.pardir))
+            pathToCheck = os.path.join(parentDir,'project.json')
 
-        print('path to project.json not found');
-        return;
+        print('path to project.json not found')
+        return
 
 
 class KOpenTerminalCommand(sublime_plugin.WindowCommand, KTerminalCommand):
@@ -201,10 +201,10 @@ class KRunCommand(sublime_plugin.WindowCommand):
 
     def run(self):
         # find project.json by starting with the dir of the file being edited
-        file_name = self.findProjectJsonFile();
+        file_name = self.findProjectJsonFile()
 
         if file_name is None:
-            print('Unable to locate project.json from file ['+self.window.active_view().file_name()+']');
+            print('Unable to locate project.json from file ['+self.window.active_view().file_name()+']')
             # todo: write an error to the status bar
             return
 
@@ -237,38 +237,38 @@ class KRunCommand(sublime_plugin.WindowCommand):
     def commandlist(self, position):
         if (position > -1):
             self.window.run_command('k_open_terminal', {'parameters':[self.commands[position][0]]})
-            i = 0;
+            i = 0
         else:
             return
 
     def findProjectJsonFile(self):
-        currentFile = self.window.active_view().file_name();
+        currentFile = self.window.active_view().file_name()
         if not currentFile:
             msg = 'Kulture: Please save the file you are editing and try again'
             sublime.error_message(msg)
             raise NotFoundError(msg)
 
-        currentDir = os.path.dirname(currentFile);
+        currentDir = os.path.dirname(currentFile)
 
-        pathToCheck = os.path.join(currentDir,'project.json');
-        previousPath = '';
+        pathToCheck = os.path.join(currentDir,'project.json')
+        previousPath = ''
 
         counter = 0
         while counter < 100:
             counter += 1
             
-            print('checking for project.json at: ['+pathToCheck+']');
+            print('checking for project.json at: ['+pathToCheck+']')
 
             if os.path.isfile(pathToCheck):
-                print('project.json found at: ['+pathToCheck+']');
-                return pathToCheck;
+                print('project.json found at: ['+pathToCheck+']')
+                return pathToCheck
 
-            previousPath = pathToCheck;
-            parentDir = os.path.abspath(os.path.join(os.path.dirname(pathToCheck),os.pardir));
-            pathToCheck = os.path.join(parentDir,'project.json');
+            previousPath = pathToCheck
+            parentDir = os.path.abspath(os.path.join(os.path.dirname(pathToCheck),os.pardir))
+            pathToCheck = os.path.join(parentDir,'project.json')
 
-        print('path to project.json not found');
-        return;
+        print('path to project.json not found')
+        return
 
 class RetrievePackageNames(threading.Thread):
     def __init__(self,timeout):
