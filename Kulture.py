@@ -210,6 +210,11 @@ class KRunCommand(sublime_plugin.WindowCommand):
 
         try:
             json_file = json.load(open(file_name))
+        except UnicodeDecodeError:
+            msg = 'Unable to open "'+file_name+'" Please save the file with UTF-8 encoding and try again'
+            print(msg)
+            sublime.error_message(msg)
+            retrun
         except IOError:
             print('project.json not found')
             return
