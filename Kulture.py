@@ -157,6 +157,11 @@ class KTerminalCommand():
 
     def findProjectJsonFile(self):
         currentFile = self.window.active_view().file_name()
+        if not currentFile:
+            msg = 'Kulture: Please save the file you are editing and try again'
+            sublime.error_message(msg)
+            raise NotFoundError(msg)
+
         currentDir = os.path.dirname(currentFile)
 
         pathToCheck = os.path.join(currentDir,'project.json')
@@ -166,6 +171,9 @@ class KTerminalCommand():
         while counter < 100:
             counter += 1
             
+            if(previousPath == pathToCheck):
+                break
+
             print('checking for project.json at: ['+pathToCheck+']')
 
             if os.path.isfile(pathToCheck):
@@ -176,9 +184,9 @@ class KTerminalCommand():
             parentDir = os.path.abspath(os.path.join(os.path.dirname(pathToCheck),os.pardir))
             pathToCheck = os.path.join(parentDir,'project.json')
 
+        sublime.error_message('project.json not found')
         print('path to project.json not found')
         return
-
 
 class KOpenTerminalCommand(sublime_plugin.WindowCommand, KTerminalCommand):
     def run(self, paths=[], parameters=None):
@@ -262,6 +270,9 @@ class KRunCommand(sublime_plugin.WindowCommand):
         while counter < 100:
             counter += 1
             
+            if(previousPath == pathToCheck):
+                break
+
             print('checking for project.json at: ['+pathToCheck+']')
 
             if os.path.isfile(pathToCheck):
@@ -272,6 +283,7 @@ class KRunCommand(sublime_plugin.WindowCommand):
             parentDir = os.path.abspath(os.path.join(os.path.dirname(pathToCheck),os.pardir))
             pathToCheck = os.path.join(parentDir,'project.json')
 
+        sublime.error_message('project.json not found')
         print('path to project.json not found')
         return
 
