@@ -113,14 +113,10 @@ class KTerminalCommand():
                 raise NotFoundError('The file open in the selected view has ' +
                     'not yet been saved')
 
-            print('in run_terminal looking for project.json')
             pathToProjJson = self.findProjectJsonFile()
             print('path to project.json'+pathToProjJson)
             
-            print('Updating dir_ to folder that contains project.json. Current value ['+dir_+']')
             dir_ = os.path.dirname(self.findProjectJsonFile())
-            print('New value for dir_'+dir_+']')
-            
 
             for k, v in enumerate(parameters):
                 parameters[k] = v.replace('%CWD%', dir_)
@@ -162,6 +158,23 @@ class KTerminalCommand():
             sublime.error_message(msg)
             raise NotFoundError(msg)
 
+        # check if there is a sublime project file
+        sublimeProjectFile = self.window.active_view().window().project_file_name()
+
+        if(sublimeProjectFile):
+            sublimeProjFileDir = os.path.dirname(sublimeProjectFile)
+            expectedPathToProjeJsonFromProj = os.path.join(sublimeProjFileDir,'project.json')
+
+            if(os.path.isfile(expectedPathToProjeJsonFromProj)):
+                msg = 'found project.json in project directory: ['+expectedPathToProjeJsonFromProj+']'
+                print(msg)
+                sublime.status_message(msg)
+                return expectedPathToProjeJsonFromProj
+
+        # project.json not found in directory as sublime project so search for it
+        msg = 'project.json not found with sublime project. looking based on file being edited.'
+        print(msg)
+        sublime.status_message(msg)
         currentDir = os.path.dirname(currentFile)
 
         pathToCheck = os.path.join(currentDir,'project.json')
@@ -261,6 +274,23 @@ class KRunCommand(sublime_plugin.WindowCommand):
             sublime.error_message(msg)
             raise NotFoundError(msg)
 
+        # check if there is a sublime project file
+        sublimeProjectFile = self.window.active_view().window().project_file_name()
+
+        if(sublimeProjectFile):
+            sublimeProjFileDir = os.path.dirname(sublimeProjectFile)
+            expectedPathToProjeJsonFromProj = os.path.join(sublimeProjFileDir,'project.json')
+
+            if(os.path.isfile(expectedPathToProjeJsonFromProj)):
+                msg = 'found project.json in project directory: ['+expectedPathToProjeJsonFromProj+']'
+                print(msg)
+                sublime.status_message(msg)
+                return expectedPathToProjeJsonFromProj
+
+        # project.json not found in directory as sublime project so search for it
+        msg = 'project.json not found with sublime project. looking based on file being edited.'
+        print(msg)
+        sublime.status_message(msg)
         currentDir = os.path.dirname(currentFile)
 
         pathToCheck = os.path.join(currentDir,'project.json')
