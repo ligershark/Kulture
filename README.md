@@ -110,6 +110,16 @@ After we resolve all the errors we have introduced, let us try and run the appli
 
 You should see a Terminal/Powershell window launch and start running your server. You can navigate to `http://localhost:5001` (or `http://localhost:5000` on a Mac) in your favorite browser you view the website.
 
+#Intellisense
+
+To be able to get intellisense working within Sublime please install [OmnisharpSublime](https://github.com/moonrabbit/OmniSharpSublime) (follow the instructions in the README).
+
+To get intellisense with `ASP.Net vNext` projects you need to create a project file in Sublime. Go to `Project - Save Project As` and enter in a name for your project.  `OmniSharpSublime` will use this to know what files and assemblies it needs to provide intellisense for (**TIP** : Close & Re-Open Sublime if you do not see intellisense, it may take 10 secs for the intellisense server [OmniSharpServer](https://github.com/nosami/OmniSharpServer) to start once Sublime has loaded all the plugins)
+
+Once OmniSharpSublime is installed and you have a project file you should be able to see intellisense:
+
+![intellisense](http://i.imgur.com/YRBPzbO.png)
+
 
 ## Credits
 
