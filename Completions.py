@@ -4,9 +4,17 @@ import threading
 import urllib.request, urllib.parse
 import json
 import re
+import os
+import sys
+import codecs
 
 SETTINGS_FILE = 'Kulture.sublime-settings'
 AC_OPTS = sublime.INHIBIT_WORD_COMPLETIONS | sublime.INHIBIT_EXPLICIT_COMPLETIONS
+
+if sys.version_info >= (3,):
+    installed_dir, _ = __name__.split('.')
+else:
+    installed_dir = os.path.basename(os.getcwd())
 
 class KKultureComplete (sublime_plugin.TextCommand):
     def run(self, edit, action = None, **args):
@@ -19,28 +27,20 @@ class KKultureCompletion( sublime_plugin.EventListener):
     def __init__(self):
         self.result = {}
         self.cache = []
-        self.thread = RetrievePackageNames(5)
-        self.thread.start()
-        while(self.thread.is_alive()):
-            pass
-        response = self.thread.response
-        for package in response:
-            t = (package['Id'],package['Id'])
-            # if t not in self.result:
-            regex = r'([-a-zA-Z0-9\.]+)\/([-a-zA-Z0-9\.]+)$'
-            match = re.search(regex, package['__metadata']['media_src'])
-            try:
-                if (match.group(1),match.group(1)) not in self.cache:
-                    self.cache.append((match.group(1), match.group(1)))
-                try:
-                    self.result[match.group(1)].append((match.group(2), match.group(2)))
-                except KeyError as e:
-                    self.result[match.group(1)] = []
-                    self.result[match.group(1)].append((match.group(2), match.group(2)))
-            except AttributeError as e:
-                pass
+        # cannont access sublime.packages_path() on init.
+        # loading package names on first completion instead
 
     def on_query_completions(self, view, prefix, locations):
+        if(self.cache == None or len(self.cache) <=0):
+            packagesFile = os.path.join(sublime.packages_path(), installed_dir,'packagenames.txt')
+            self.thread = ReadPackageNamesFromFile(5,packagesFile)
+            self.thread.start()
+            while(self.thread.is_alive()):
+                pass
+
+            response = self.thread.response
+            for package in response:
+                self.cache.append((package,package))
         pos = locations[0]
         scopes = view.scope_name(pos).split()
         if "source.json" not in scopes:
@@ -77,17 +77,6 @@ class KKultureCompletion( sublime_plugin.EventListener):
                         pass
                 if index==pos:
                     if (depth == 1 and tokens[0] == 'dependencies'):
-                        # Version number
-                        version_regex = r'(?:,|{|\[])"([-a-zA-Z0-9.*]+)":"[-a-zA-Z0-9.*]*$'
-                        try:
-                            package_name = re.search(version_regex, doc[0:index]).group(1)
-                            return (self.result[package_name], AC_OPTS)
-                        except AttributeError as e:
-                            pass
-                        except KeyError as e:
-                            # TODO: Not in cache. Make HTTP request to feth completions on that package
-                            return AC_OPTS
-                        # Package name
                         return (self.cache, AC_OPTS)
                     elif depth == 0:
                         # In future, get completions dynamically from http://schemastore.org/schemas/json/project
@@ -111,27 +100,20 @@ class KKultureCompletion( sublime_plugin.EventListener):
 
             return AC_OPTS
 
-
-class RetrievePackageNames(threading.Thread):
-    def __init__(self,timeout):
+class ReadPackageNamesFromFile(threading.Thread):
+    def __init__(self,timeout,filepath):
         self.timeout = timeout
+        self.filepath = filepath
         self.response = None
         threading.Thread.__init__(self)
 
     def run(self):
-        try:
-            request = urllib.request.Request("https://www.myget.org/F/aspnetrelease/api/v2/Packages()?"
-                + "$select=Id&"
-                + "$format=json&"
-                + "orderby=DownloadCount&"
-                + "$top=100",
-                headers={"User-Agent": "Sublime"})
-            http_file = urllib.request.urlopen(request, timeout=self.timeout)
-            self.response = json.loads(http_file.read().decode('utf-8'))['d']
-            return
-        except (urllib.request.HTTPError) as e:
-            self.message = '%s: HTTP error %s contacting API' % (__name__, str(e.code))
-        except (urllib.request.URLError) as e:
-            self.message = '%s: URL error %s contacting API' % (__name__, str(e.reason))
-        self.response = False
+        allPackageNames = []
+        filePath = self.filepath
+        print('Kulture: loading package names from: '+filePath)
+        with codecs.open(filePath, 'r',encoding='utf8') as f:
+            for line in f:
+                allPackageNames.append(line.strip())
+
+        self.response = allPackageNames
         return
