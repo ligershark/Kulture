@@ -31,10 +31,10 @@ There is also a getting started tutorial to show you some of the features includ
   * Perpare Powershell execution policy. In an Admin PowerShell window execute the following command.
   <pre><code>Set-ExecutionPolicy RemoteSigned</code></pre>
   * From an admin command prompt window run the following command
-  <pre><code>@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.ps1'))"</code></pre>
+  <pre><code>powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.ps1'))"</code></pre>
   * Close the command prompt window and open a new command prompt window and run the following commands
   <pre><code>kvm setup
-  kvm install 1.0.0-alpha3-10202 -p</code></pre>
+  kvm install latest</code></pre>
   * If Sublime was already installed and running while installing ASP.NET vNext Command Line Tools, you will need to restart Sublime for the changes to work.
 
 0. Download and Install [Sublime Text 3](http://www.sublimetext.com/3)
@@ -84,6 +84,8 @@ Since we just grabbed this from source control there are NuGet packages which th
 - Type `Run K Commands` and hit Enter (Return)
 - Type `kpm restore` and hit Enter (Return)
 
+_Note:_ when executing `kpm restore` if you get an error about missing NuGet packages you can execute the alternate command `kpm restore -s https://www.myget.org/F/aspnetvnext/api/v2`
+
 You should see a Terminal/Powershell window launch and execute your commands.
 
 Now, let's go ahead and tell Sublime to use `ASP.NET` as the build system. To do this, click `Tools -> Build System -> ASP.NET`
@@ -106,7 +108,17 @@ After we resolve all the errors we have introduced, let us try and run the appli
 - Type `k web` and hit Enter (Return)
 - If you are on a Mac, type `k kestrel` and hit Enter (Return)
 
-You should see a Terminal/Powershell window launch and start running your server. You can navigate to `http://localhost:5001` in your favorite browser you view the website.
+You should see a Terminal/Powershell window launch and start running your server. You can navigate to `http://localhost:5001` (or `http://localhost:5000` on a Mac) in your favorite browser you view the website.
+
+#Intellisense
+
+To be able to get intellisense working within Sublime please install [OmnisharpSublime](https://github.com/moonrabbit/OmniSharpSublime) (follow the instructions in the README).
+
+To get intellisense with `ASP.Net vNext` projects you need to create a project file in Sublime. Go to `Project - Save Project As` and enter in a name for your project.  `OmniSharpSublime` will use this to know what files and assemblies it needs to provide intellisense for (**TIP** : Close & Re-Open Sublime if you do not see intellisense, it may take 10 secs for the intellisense server [OmniSharpServer](https://github.com/nosami/OmniSharpServer) to start once Sublime has loaded all the plugins)
+
+Once OmniSharpSublime is installed and you have a project file you should be able to see intellisense:
+
+![intellisense](http://i.imgur.com/YRBPzbO.png)
 
 
 ## Credits
