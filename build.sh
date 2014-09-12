@@ -3,6 +3,7 @@
 ver=`cat ~/.kre/alias/default.alias`
 add_to_path=$HOME"/.kre/packages/"$ver"/bin"
 export PATH=$PATH:/usr/local/bin:$add_to_path
+[ -s $HOME"/.kre/kvm/kvm.sh" ] && . $HOME"/.kre/kvm/kvm.sh"
 directory="./"
 temp=$directory"project.json"
 counter=0
