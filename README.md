@@ -33,8 +33,7 @@ There is also a getting started tutorial to show you some of the features includ
   * From an admin command prompt window run the following command
   <pre><code>powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.ps1'))"</code></pre>
   * Close the command prompt window and open a new command prompt window and run the following commands
-  <pre><code>kvm setup
-  kvm install latest</code></pre>
+  <pre><code>kvm upgrade</code></pre>
   * If Sublime was already installed and running while installing ASP.NET vNext Command Line Tools, you will need to restart Sublime for the changes to work.
 
 0. Download and Install [Sublime Text 3](http://www.sublimetext.com/3)
